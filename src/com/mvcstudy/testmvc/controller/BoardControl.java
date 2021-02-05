@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("*.board")
 public class BoardControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	//UID값으로 통신한 것이 정상인지 판단 -> 미리 선언(직렬화 관련)
+	//UID값으로 통신한 것이 정상인지 판단 -> 미리 선언(직렬화 관련) 깃허브 수정 테스트
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);
