@@ -9,7 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("*.board")
+import com.mvcstudy.testmvc.service.BoardService;
+import com.mvcstudy.testmvc.vo.Board;
+
+@WebServlet("*.board") //매핑
 public class BoardControl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	//UID값으로 통신한 것이 정상인지 판단 -> 미리 선언(직렬화 관련)
@@ -30,15 +33,15 @@ public class BoardControl extends HttpServlet {
 		switch (command) {
 
 		case "/write.board":
-/*			Board board = new Board();
+			Board board = new Board();
 			board.setB_title(request.getParameter("b_title"));
 			board.setB_content(request.getParameter("b_content"));
-
-			userService = UserService.getInstance();
-			userService.insertBoard(board);
-
-			view = "board/board-result";*/
+			boardService = BoardService.getInstance();
+			boardService.insertBoard(board);
+			
+			view = "board/result";
 			break;
+			
 		case "/form.board":
 			view = "board/form";
 			break;
