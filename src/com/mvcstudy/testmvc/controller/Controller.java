@@ -40,7 +40,11 @@ public class Controller extends HttpServlet {
 		String pw = null;
 		HttpSession session = null;
 		
+		System.out.println("test :: " + command);
+		
 		command = checkSession(request, response, command);
+		
+	
 		
 		switch (command) {
 			case "/user-list.do":
@@ -115,6 +119,7 @@ public class Controller extends HttpServlet {
 		//특정 자원에 처리를 요청하고 처리 결과를 얻어오는 기능을 수행하는 클래스입니다
 		RequestDispatcher rd = request.getRequestDispatcher(view+".jsp");
 		rd.forward(request, response);
+		
 	}
 	
 	String checkSession(HttpServletRequest request, HttpServletResponse response, String command) {

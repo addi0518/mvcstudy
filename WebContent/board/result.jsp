@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>저장 완료</h1>
-<a href="/mvcstudy/board-list.do">돌아가기</a>
+<a href="/mvcstudy/board-list.board">돌아가기</a>
 </body>
 </html>	

@@ -13,11 +13,11 @@
 	<table>
 		<tr>
 			<td>제목</td>
-			<td><input type="text" name="" value=""></td>
+			<td><input type="text" name="b_title" value=""></td>
 		</tr>
 		<tr>
 			<td>내용</td>
-			<td><textarea rows="25" cols="50"></textarea></td>
+			<td><textarea rows="25" cols="50" name="b_content"></textarea></td>
 		</tr>
 		<tr>
 			<td colspan="2" style="text-align: center"><input type="submit" value="글등록"></td>

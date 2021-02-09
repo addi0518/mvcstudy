@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import com.mvcstudy.testmvc.database.DBConnection;
 import com.mvcstudy.testmvc.vo.Board;
 
-//데이터베이스에 접속해서 데이터 추가,삭제, 수정 등의 작업
+//데이터베이스에 접속해서 데이터 추가,삭제,수정 등의 작업
 public class BoardDAO {
 	
 	private static BoardDAO b_dao = null;
@@ -29,11 +29,15 @@ public class BoardDAO {
 		
 		try {
 			conn = DBConnection.getConnection();
-			String sql = "insert into user(b_title,b_content,b_date,b_writer) values(?,?,?,?,?)";
-			pstmt.setNString(1, board.getB_title());
-			pstmt.setNString(2, board.getB_content());
-			pstmt.setNString(3, board.getB_date());
-			pstmt.setNString(4, board.getB_writer());
+			/*
+			 * String sql =
+			 * "insert into board(b_title,b_content,b_date,b_writer) values(?,?,?,?)";
+			 */
+			String sql = "insert into board(b_title,b_content,b_writer) values(?,?,?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, board.getB_title());
+			pstmt.setString(2, board.getB_content());
+			pstmt.setString(3, board.getB_writer());
 			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			System.out.println("SQLException : " + ex.getMessage());

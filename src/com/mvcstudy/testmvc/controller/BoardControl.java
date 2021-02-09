@@ -29,13 +29,16 @@ public class BoardControl extends HttpServlet {
 		String contextPath = request.getContextPath();
 		String command = requestURI.substring(contextPath.length());
 		String view = null;
-
+		BoardService boardService = null;
+	
+		
 		switch (command) {
 
 		case "/write.board":
 			Board board = new Board();
 			board.setB_title(request.getParameter("b_title"));
 			board.setB_content(request.getParameter("b_content"));
+			
 			boardService = BoardService.getInstance();
 			boardService.insertBoard(board);
 			
@@ -44,6 +47,11 @@ public class BoardControl extends HttpServlet {
 			
 		case "/form.board":
 			view = "board/form";
+			break;
+			
+		case "/board-list.board":
+			
+			view = "board/board-list";
 			break;
 		}
 		

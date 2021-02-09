@@ -19,7 +19,7 @@ public class BoardService {
 		return b_service;
 	}
 	
-	public void inserBoard(Board board) {
+	public void insertBoard(Board board) {
 		b_dao.insertBoard(board);
 	}
 }
